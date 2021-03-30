@@ -1,0 +1,15 @@
+---
+- name: yum update
+  yum:
+     name: '*'
+     state: latest
+
+- name: package installation selinux-policy-devel 
+  yum:
+     name: selinux-policy-devel
+     state: present
+
+- name: package installation initial-setup
+  yum:
+     name: initial-setup
+     state: present
