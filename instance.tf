@@ -13,5 +13,10 @@ resource "google_compute_instance" "vm" {
   network_interface {
     network = "default"
    }
+  service_account {
+    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
+    email  = google_service_account.default.email
+    scopes = ["cloud-platform"]
+  }
    
 }
