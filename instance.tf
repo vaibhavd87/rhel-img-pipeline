@@ -6,12 +6,14 @@ resource "google_compute_instance" "vm" {
 
   boot_disk {
     initialize_params {      
-     image = "projects/rhel-cloud/global/images/rhel-8-v20210316"
+     image = "projects/centos-cloud/global/images/centos-7-v20210316"
     }
   }
 
   network_interface {
     network = "default"
+    access_config {
+      }
    }
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
