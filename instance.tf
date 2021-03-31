@@ -22,3 +22,7 @@ resource "google_compute_instance" "vm" {
   }
    
 }
+
+output "ip" {
+  value = google_compute_instance.vm.network_interface
+  }
